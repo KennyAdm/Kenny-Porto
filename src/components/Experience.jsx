@@ -61,6 +61,10 @@ const ExperienceSection = () => {
   const experiences = [
     {
       icon: Code2,
+      images: [
+        '/OMB23/OMB2.png',
+        '/OMB23/ombb.png',
+      ],
       title: 'Event Planner',
       company: 'Orientasi Mahasiswa Baru UMN 2023',
       period: 'March 2023 - September 2023',
@@ -69,6 +73,10 @@ const ExperienceSection = () => {
     },
     {
       icon: Database,
+      images: [
+        '/seminar/seminar1.png',
+        '/seminar/seminar2.png',
+      ],
       title: 'Event Planner Coordinator',
       company: 'Information System Seminar',
       period: 'August 2023 - September 2023',
@@ -77,6 +85,10 @@ const ExperienceSection = () => {
     },
     {
       icon: Activity,
+      images: [
+        '/OMB24/gambar1.png',
+        '/OMB24/gambar3.png',
+      ],
       title: 'Event Planner Coordinator',
       company: 'Orientasi Mahasiswa Baru UMN 2024',
       period: 'Jan 2024 - Sept 2024',
@@ -87,9 +99,9 @@ const ExperienceSection = () => {
       icon: Briefcase,
       title: 'Data Engineer & Software Development Internship',
       company: 'PT. Solarion Energi Alam',
-      period: 'February 2025 - July 2025',
+      period: 'February 2025 - July 2025 (Present)',
       description:
-        'Leading cross-functional IT teams in delivering innovative technology solutions for renewable energy projects. Overseeing system architecture planning, resource allocation, and implementation of cloud infrastructure. Driving digital transformation initiatives while ensuring alignment with business objectives and industry compliance standards.',
+        'As a Data Engineer & Software Development Intern, I contributed to data processing by performing data queries and processing tasks. I also supported the design of software and application interfaces to ensure they were more intuitive and functional. Additionally, I was involved in R&D activities to enhance and improve existing systems, such as the PV Dashboard Monitoring System and AMS, to optimize their performance and efficiency.',
     },
   ];
 
@@ -125,8 +137,7 @@ const ExperienceSection = () => {
               <div className='absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full' />
             </div>
             <p className='text-lg md:text-xl text-gray-400 font-medium tracking-wide text-center max-w-2xl'>
-              "Transforming ideas into digital reality, one project at a time"
-            </p>
+            "Commit to the LORD whatever you do, and He will establish your plans." – Proverbs 16:3            </p>
           </div>
 
           {/* Experience grid with improved layout */}

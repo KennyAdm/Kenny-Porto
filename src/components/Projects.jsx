@@ -60,36 +60,50 @@ const ExperienceCard = ({ title, company, period, description, icon: Icon, image
 const ExperienceSection = () => {
   const experiences = [
     {
-      icon: Code2,
-      title: 'Event Planner',
-      company: 'Orientasi Mahasiswa Baru UMN 2023',
-      period: 'March 2023 - September 2023',
+      icon: Activity,
+      title: 'Classification Analysis Based on Heart Attack Risk Prediction Using Heart Disease Dataset',
+      company: 'Data Analysis · Data Science · Python (Programming Language) · Machine Learning · Health',
+      period: '2024',
       description:
-        'Actively contributed to designing creative event assignments to enhance the experience of approximately 2,000 new students. Successfully carried out assigned tasks with responsibility and efficiency according to designated roles. Participated in preparation meetings by providing input and reporting task progress. Additionally, assisted in resolving operational issues during the event to ensure smooth execution.',
+      'In this project, I predicted heart attack risks using machine learning with a Kaggle dataset, implementing Random Forest, K-Nearest Neighbor (KNN), and Decision Tree algorithms. Utilizing Jupyter Notebook, I conducted data preprocessing, feature engineering, and visualization to identify key risk factors. The evaluation revealed that Random Forest achieved the highest accuracy at 63.6%, making it the most effective model for this analysis.'
     },
     {
       icon: Database,
-      title: 'Event Planner Coordinator',
-      company: 'Information System Seminar',
-      period: 'August 2023 - September 2023',
+      title: 'PROJECT MOBILE APPLICATION AND DEVELOPMENT "GASKUY APP"',
+      company: 'Mobile Application Development, Android Studio, Java, XML, Firebase, MySQL',
+      period: '2024',
       description:
-        'Led a team in planning and executing a seminar for 150+ participants, ensuring smooth operations and adherence to quality standards. Managed logistics, including venue setup and speaker coordination. Developed event timelines, delegated tasks, and supervised communications to ensure clarity and efficiency.',
+      'In this project, my team and I developed the "Gas Kuy" mobile application to digitize gas cylinder agent businesses in Indonesia, replacing inefficient manual processes. The app simplifies gas ordering, enables real-time order tracking, and enhances operational efficiency through stock and customer data management features. Built using Android Studio, PHP, MySQL, and Figma, it provides a modern solution to improve transparency, reduce operational errors, and enhance customer experience.'
     },
     {
-      icon: Activity,
-      title: 'Event Planner Coordinator',
-      company: 'Orientasi Mahasiswa Baru UMN 2024',
-      period: 'Jan 2024 - Sept 2024',
+      icon: Database,
+      title: 'Optimizing Property Data Management: ETL Implementation in Data Warehouses in the Property Industry',
+      company: 'Data Engineering, Data Warehouse, ETL, Python (Programming Language), SQL',
+      period: '2024',
       description:
-        'Designed interactive and inclusive event concepts to enhance the experience of over 2,000 new participants at UMN. I coordinated with various organizational divisions to ensure all requirements were met during preparation, execution, and event days. With a team of 7 members, I effectively delegated tasks to ensure each aspect of the event ran according to schedule. During the event, I also addressed operational challenges with efficient and effective solutions.',
+      'This implements ETL processes to optimize property data management and support digital transformation. Using 2009–2022 sales data, technologies like Pentaho, MySQL, and Python provide valuable business insights. Analysis highlights a 72.9% dominance of "Single Family" properties and a strong correlation between Estimated Value and Sale Price, aiding marketing and investment strategies. The ETL-based Data Warehouse enhances operational efficiency and drives data-driven property management innovation.'
+    },
+    {
+      icon: Code2,
+      title: 'Analysis and Evaluation of Total Motorcycle Sales Prediction Model with Forest Model in SAS Visual Analytic',
+      company: 'SAS (Software), Data Modeling, Business Process Improvement',
+      period: '2024',
+      description:'In this project, I analyzed and predicted motorcycle sales in Indonesia using SAS Visual Analytics and machine learning techniques such as Random Forest, Decision Tree, and Neural Network. Following the CRISP-DM methodology, I conducted data processing, analysis, and model evaluation, with Random Forest emerging as the most accurate model based on an ASE of 11,616.4284.'
     },
     {
       icon: Briefcase,
-      title: 'Data Engineer & Software Development Internship',
-      company: 'PT. Solarion Energi Alam',
-      period: 'February 2025 - July 2025',
+      title: 'Analysis Design of the Loan Book’s System in the UMN Library',
+      company: 'User Interface Design, Figma (Software), Project Management',
+      period: '2023',
+      description:'The technology-based book loan system at the Multimedia Nusantara University (UMN) Library enhances lending efficiency using the Rapid Application Development (RAD) methodology. Key features include user-friendly navigation, automated borrowing and returning, and return deadline notifications. Developed with Draw.io for UML diagrams and Figma for UI/UX design, the system improved accessibility and efficiency. User Acceptance Testing (UAT) showed 94% effectiveness in optimizing loan procedures, addressing issues like book status visibility, return deadlines, and late fees.'
+    },
+    {
+      icon: Activity,
+      title: 'Optimizing Salary Prediction Models: A Comprehensive Evaluation Using Random Forest Regression',
+      company: 'Data Modeling · Salary Review · Business Intelligence (BI)',
+      period: '2024',
       description:
-        'Leading cross-functional IT teams in delivering innovative technology solutions for renewable energy projects. Overseeing system architecture planning, resource allocation, and implementation of cloud infrastructure. Driving digital transformation initiatives while ensuring alignment with business objectives and industry compliance standards.',
+      'In this project, my team and I developed a salary prediction model using Random Forest Regression and the CRISP-DM methodology to ensure accuracy and fairness in employee compensation. Considering factors like age, experience, education, and job position, the model achieved an R² of 0.9419, demonstrating high predictive accuracy. Data analysis revealed that experience and age were the strongest predictors, while education had a moderate impact.'
     },
   ];
 
@@ -122,10 +136,10 @@ const ExperienceSection = () => {
               <h2 className='text-5xl md:text-7xl font-black text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-center pb-3'>
                 Kenny Adam's Projects
               </h2>
-              <div className='absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full pb-3' />
+              <div className='absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full' />
             </div>
             <p className='text-lg md:text-xl text-gray-400 font-medium tracking-wide text-center max-w-2xl'>
-              "Transforming ideas into digital reality, one project at a time"
+            "Whatever you do, work at it with all your heart, as if you were working for the Lord, not for human masters." – Colossians 3:23
             </p>
           </div>
 
