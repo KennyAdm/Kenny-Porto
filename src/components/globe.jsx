@@ -9,6 +9,7 @@ const slugs = [
   "flutter",
   "android",
   "html5",
+  "",
   "css3",
   "nodedotjs",
   "express",
