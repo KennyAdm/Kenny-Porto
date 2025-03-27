@@ -56,8 +56,8 @@ const profile = {
     name: 'Kenny Adam',
     title: 'Data Engineer | Data Analyst | Full-Stack Developer',
     skills: [
-    'MySQL', 'Laravel', 'Python', 'Git', 'Cloudflare',  
     'Jupyter Notebook', 'SAS Visual Analytics', 'Power BI', 'Tableau',  
+    'MySQL', 'Laravel', 'Python', 'Git', 'Cloudflare',  
     'VS Code', 'Mobile Application', 'Figma',
     ],
     hardWorker: true,
