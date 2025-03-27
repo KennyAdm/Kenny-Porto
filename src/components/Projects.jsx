@@ -61,6 +61,10 @@ const ExperienceSection = () => {
   const experiences = [
     {
       icon: Activity,
+      images: [
+        '/Project/project1.png',
+        '/Project/project2.png',
+      ],
       title: 'Classification Analysis Based on Heart Attack Risk Prediction Using Heart Disease Dataset',
       company: 'Data Analysis · Data Science · Python (Programming Language) · Machine Learning · Health',
       period: '2024',
@@ -69,6 +73,10 @@ const ExperienceSection = () => {
     },
     {
       icon: Database,
+      images: [
+        '/Project/project3.png',
+        '/Project/project4.png',
+      ],
       title: 'PROJECT MOBILE APPLICATION AND DEVELOPMENT "GASKUY APP"',
       company: 'Mobile Application Development, Android Studio, Java, XML, Firebase, MySQL',
       period: '2024',
@@ -77,6 +85,10 @@ const ExperienceSection = () => {
     },
     {
       icon: Database,
+      images: [
+        '/Project/project5.png',
+        '/Project/project6.png',
+      ],
       title: 'Optimizing Property Data Management: ETL Implementation in Data Warehouses in the Property Industry',
       company: 'Data Engineering, Data Warehouse, ETL, Python (Programming Language), SQL',
       period: '2024',
@@ -85,6 +97,10 @@ const ExperienceSection = () => {
     },
     {
       icon: Code2,
+      images: [
+        '/Project/project7.png',
+        '/Project/project8.png',
+      ],
       title: 'Analysis and Evaluation of Total Motorcycle Sales Prediction Model with Forest Model in SAS Visual Analytic',
       company: 'SAS (Software), Data Modeling, Business Process Improvement',
       period: '2024',
@@ -92,6 +108,10 @@ const ExperienceSection = () => {
     },
     {
       icon: Briefcase,
+      images: [
+        '/Project/project9.png',
+        '/Project/project10.png',
+      ],
       title: 'Analysis Design of the Loan Book’s System in the UMN Library',
       company: 'User Interface Design, Figma (Software), Project Management',
       period: '2023',
@@ -99,6 +119,10 @@ const ExperienceSection = () => {
     },
     {
       icon: Activity,
+      images: [
+        '/Project/project11.png',
+        '/Project/project12.png',
+      ],
       title: 'Optimizing Salary Prediction Models: A Comprehensive Evaluation Using Random Forest Regression',
       company: 'Data Modeling · Salary Review · Business Intelligence (BI)',
       period: '2024',
