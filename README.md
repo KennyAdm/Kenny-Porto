@@ -28,15 +28,6 @@ Welcome to my **dynamic portfolio website**! This interactive site showcases my 
 
 ---
 
-## 🖥️ Live Preview
-
-Check out the live preview of the portfolio website:
-[**Live Demo**](https://codervai.vercel.app/)
-
-![Portfolio Demo](https://i.postimg.cc/Dfr5jCQp/Screenshot-2025-01-02-120901.png)
-
----
-
 ## 🧩 Portfolio Sections
 
 ### 🏠 Home & Hero
