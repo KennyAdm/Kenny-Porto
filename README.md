@@ -1,4 +1,4 @@
-# Modern Interactive Portfolio
+# Kenny Adam's Portfolio
 
 <div align="center">
   <pre>
@@ -23,6 +23,8 @@ Welcome to my **dynamic portfolio website**! This interactive site showcases my 
 - **Component-based architecture** for maintainability
 - **Performance optimized** loading and rendering
 - **Accessibility focused** for all users
+- **Contact form** with email integration
+- **Interactive skill showcase** with categorized abilities
 
 ---
 
@@ -45,33 +47,41 @@ Check out the live preview of the portfolio website:
 
 ### 💼 Experience
 
-- Interactive work history cards
+- Interactive work history cards with image gallery
 - Timeline of professional growth
 - Detailed role descriptions and achievements
+- Visual representation of work experience
 
 ### 🎓 Education
 
-- Tabbed interface showing formal education, self-learning, and certifications
-- Visual presentation of skills and projects
+- Comprehensive educational background
+- Visual presentation of academic achievements
 - Interactive cards with hover effects
 
 ### 🛠️ Skills
 
+- Categorized skill sets:
+  - UI/UX and Diagram Design (8 skills)
+  - Tools and Analytics (8 skills)
+  - Frontend Development (5 skills)
+  - Creative Skills (5 skills)
+  - Backend Development (3 skills)
+  - Cloud & DevOps (3 skills)
+- Interactive skill tags with hover effects
 - Visual representation of technical abilities
-- Categorized skill sets
-- Interactive skill tags
 
 ### 🚀 Projects
 
 - Showcase of development work
-- "Coming Soon" interactive state
 - Animated project cards
 
 ### 📞 Contact
 
-- Interactive contact form
-- Social media links
+- Interactive contact form with Web3Forms integration
+- Direct email sending to kennyadam017@gmail.com
+- Social media links (LinkedIn, Instagram)
 - Professional connections
+- Location information
 
 ---
 
@@ -79,19 +89,26 @@ Check out the live preview of the portfolio website:
 
 <div align="center">
 
-| Frontend     | Styling       | Animation      | Deployment   |
-| ------------ | ------------- | -------------- | ------------ |
-| React.js     | Tailwind CSS  | Framer Motion  | Vercel       |
-| Vite         | PostCSS       | CSS Animations | GitHub Pages |
-| React Router | CSS Variables | GSAP           | Netlify      |
+| Frontend     | Styling       | Animation      | Backend       |
+| ------------ | ------------- | -------------- | ------------- |
+| React.js     | Tailwind CSS  | Framer Motion  | Node.js       |
+| Next.js      | PostCSS       | CSS Animations | Python        |
+| TypeScript   | CSS Variables | GSAP           | Laravel       |
+| HTML5/CSS3   |               |                | MySQL         |
 
 </div>
 
-Additional libraries:
+Additional libraries and tools:
 
 - **Lucide React** - Modern icon system
 - **React Icons** - Extensive icon library
-- **PrismJS** - Code syntax highlighting
+- **Web3Forms** - Contact form integration
+- **Cloudflare** - Performance optimization
+- **VS Code & Cursor** - Development tools
+- **Jupyter Notebook** - Data analysis
+- **Power BI & Tableau** - Data visualization
+- **SAS Visual Analytics** - Business intelligence
+- **R Studio** - Statistical computing
 
 ---
 
@@ -102,21 +119,17 @@ portfolio/
 ├── public/                # Static assets
 ├── src/
 │   ├── assets/            # Images, fonts, and static resources
-│   │   ├── css/           # CSS files including portfolio.css
+│   │   ├── css/           # CSS files
 │   │   ├── images/        # Image resources
 │   │   └── ...
 │   ├── components/        # React components
 │   │   ├── ui/            # Reusable UI components
-│   │   │   ├── meteors.jsx
-│   │   │   ├── sparkles-text.jsx
-│   │   │   ├── card.jsx
-│   │   │   └── ...
-│   │   ├── Hero.jsx       # Hero section component
+│   │   ├── Hero.jsx       # Hero section
 │   │   ├── PortfolioPage.jsx  # About section
 │   │   ├── Skills.jsx     # Skills showcase
 │   │   ├── Experience.jsx # Work experience
-│   │   ├── Education.jsx  # Educational background with tabs
-│   │   ├── Projects.jsx   # Projects with states
+│   │   ├── Education.jsx  # Educational background
+│   │   ├── Projects.jsx   # Projects showcase
 │   │   ├── Contact.jsx    # Contact information
 │   │   └── Header.jsx     # Navigation header
 │   ├── App.jsx            # Main application component
@@ -184,6 +197,16 @@ npm run preview
 
 ---
 
+## 🤝 Contact
+
+Feel free to reach out to me through:
+
+- Email: kennyadam017@gmail.com
+- LinkedIn: [Kenny Adam](https://www.linkedin.com/in/kenny-adam/)
+- Instagram: [@kennyadm_](https://www.instagram.com/kennyadm_/)
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! Follow these steps:
@@ -203,6 +226,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 <div align="center">
+  <p>
+    <strong>Built with ❤️ using React, Tailwind CSS, and Framer Motion</strong>
+  </p>
   <p>
     © 2025 Kenny Adam
   </p>
