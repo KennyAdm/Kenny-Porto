@@ -25,6 +25,7 @@ Welcome to my **dynamic portfolio website**! This interactive site showcases my 
 - **Accessibility focused** for all users
 - **Contact form** with email integration
 - **Interactive skill showcase** with categorized abilities
+<<<<<<< HEAD
 
 ---
 
@@ -34,6 +35,8 @@ Check out the live preview of the portfolio website:
 [**Live Demo**](https://codervai.vercel.app/)
 
 ![Portfolio Demo](https://i.postimg.cc/Dfr5jCQp/Screenshot-2025-01-02-120901.png)
+=======
+>>>>>>> 1c93ffac46dd3b7f5cc87015fa649e6cdca4814a
 
 ---
 
