@@ -1,13 +1,11 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Code2, Paintbrush, Database, Layout, Cloud, BarChart, Figma, Box, PenTool, FileStack, Activity, GitBranch, MonitorSmartphone, Laptop2, Brush, FileJson, Binary, BrainCircuit, Palette, FileSpreadsheet, Server, Phone as Python, Link as Linux, Github, Notebook as JupyterNotebook, BarChart2, Table2, Cpu, Blocks, Smartphone, BookOpen } from 'lucide-react';
 import IconCloudDemo from './globe';
-import { Code2, Paintbrush, Database, Layout, Cpu, Cloud, BarChart } from 'lucide-react';
 
 const SkillCard = ({ icon: Icon, title, skills, color }) => (
-  <Card className='group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20'>
+  <div className='group relative overflow-hidden rounded-xl bg-gray-900/80 border border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20'>
     <div className='absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer'></div>
-    <CardContent className='p-6 relative z-10'>
+    <div className='p-6 relative z-10'>
       <div className='flex items-center gap-4 mb-6'>
         <div className={`p-3 rounded-xl bg-gray-800/50 ${color} group-hover:scale-110 transition-transform duration-300`}>
           <Icon className='w-8 h-8' />
@@ -18,17 +16,17 @@ const SkillCard = ({ icon: Icon, title, skills, color }) => (
       </div>
       <div className='flex flex-wrap gap-2'>
         {skills.map((skill, index) => (
-          <Badge
+          <div
             key={index}
-            variant='outline'
-            className='group/badge relative bg-gray-800/50 hover:bg-gray-700/80 text-gray-100 border-gray-600 flex items-center gap-2 py-2 px-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20'
+            className='group/badge relative bg-gray-800/50 hover:bg-gray-700/80 text-gray-100 border border-gray-600 rounded-lg flex items-center gap-2 py-2 px-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20'
           >
-            <span className='font-medium'>{skill}</span>
-          </Badge>
+            {skill.icon}
+            <span className='font-medium'>{skill.name}</span>
+          </div>
         ))}
       </div>
-    </CardContent>
-  </Card>
+    </div>
+  </div>
 );
 
 const SkillsSection = () => {
@@ -38,14 +36,14 @@ const SkillsSection = () => {
       title: 'UI/UX and Diagram Design',
       color: 'text-purple-400',
       skills: [
-        'Figma',
-        'Draw.io',
-        'Responsive Design',
-        'Prototyping',
-        'Use Case',
-        'Activity Diagram',
-        'Sequence Diagram',
-        'Class Diagram'
+        { name: 'Figma', icon: <Figma className="w-4 h-4" /> },
+        { name: 'Draw.io', icon: <Box className="w-4 h-4" /> },
+        { name: 'Responsive Design', icon: <MonitorSmartphone className="w-4 h-4" /> },
+        { name: 'Prototyping', icon: <PenTool className="w-4 h-4" /> },
+        { name: 'Use Case', icon: <FileStack className="w-4 h-4" /> },
+        { name: 'Activity Diagram', icon: <Activity className="w-4 h-4" /> },
+        { name: 'Sequence Diagram', icon: <GitBranch className="w-4 h-4" /> },
+        { name: 'Class Diagram', icon: <Box className="w-4 h-4" /> }
       ],
     },
     {
@@ -53,14 +51,14 @@ const SkillsSection = () => {
       title: 'Tools and Analytics',
       color: 'text-pink-400',
       skills: [
-        'Jupyter Notebook',
-        'Power BI',
-        'Tableau',
-        'VS Code',
-        'Cursor',
-        'SAS Visual Analytics',
-        'Mobile Application',
-        'R Studio'
+        { name: 'Jupyter Notebook', icon: <JupyterNotebook className="w-4 h-4" /> },
+        { name: 'Power BI', icon: <BarChart2 className="w-4 h-4" /> },
+        { name: 'Tableau', icon: <Table2 className="w-4 h-4" /> },
+        { name: 'VS Code', icon: <Code2 className="w-4 h-4" /> },
+        { name: 'Cursor', icon: <PenTool className="w-4 h-4" /> },
+        { name: 'SAS Visual Analytics', icon: <BarChart className="w-4 h-4" /> },
+        { name: 'Mobile Application', icon: <Smartphone className="w-4 h-4" /> },
+        { name: 'R Studio', icon: <BookOpen className="w-4 h-4" /> }
       ],
     },
     {
@@ -68,11 +66,11 @@ const SkillsSection = () => {
       title: 'Frontend Development',
       color: 'text-blue-400',
       skills: [
-        'React.js',
-        'HTML5',
-        'CSS3',
-        'Next.js',
-        'TypeScript'
+        { name: 'React.js', icon: <Binary className="w-4 h-4" /> },
+        { name: 'HTML5', icon: <FileJson className="w-4 h-4" /> },
+        { name: 'CSS3', icon: <Brush className="w-4 h-4" /> },
+        { name: 'Next.js', icon: <BrainCircuit className="w-4 h-4" /> },
+        { name: 'TypeScript', icon: <FileJson className="w-4 h-4" /> }
       ],
     },
     {
@@ -80,11 +78,11 @@ const SkillsSection = () => {
       title: 'Creative Skills',
       color: 'text-yellow-400',
       skills: [
-        'Content Management',
-        'Dynamic Content',
-        'Identifying Optimal Patterns for Analytics',
-        'UI Animation',
-        'Advanced Microsoft Office'
+        { name: 'Content Management', icon: <FileStack className="w-4 h-4" /> },
+        { name: 'Dynamic Content', icon: <Blocks className="w-4 h-4" /> },
+        { name: 'Identifying Optimal Patterns', icon: <BrainCircuit className="w-4 h-4" /> },
+        { name: 'UI Animation', icon: <Palette className="w-4 h-4" /> },
+        { name: 'Advanced Microsoft Office', icon: <FileSpreadsheet className="w-4 h-4" /> }
       ],
     },
     {
@@ -92,9 +90,9 @@ const SkillsSection = () => {
       title: 'Backend Development',
       color: 'text-green-400',
       skills: [
-        'MySQL',
-        'Laravel',
-        'Python'
+        { name: 'MySQL', icon: <Database className="w-4 h-4" /> },
+        { name: 'Laravel', icon: <Server className="w-4 h-4" /> },
+        { name: 'Python', icon: <Python className="w-4 h-4" /> }
       ],
     },
     {
@@ -102,9 +100,9 @@ const SkillsSection = () => {
       title: 'Cloud & DevOps',
       color: 'text-orange-400',
       skills: [
-        'Cloudflare',
-        'Git',
-        'Linux'
+        { name: 'Cloudflare', icon: <Cloud className="w-4 h-4" /> },
+        { name: 'Git', icon: <Github className="w-4 h-4" /> },
+        { name: 'Linux', icon: <Linux className="w-4 h-4" /> }
       ],
     },
   ];
