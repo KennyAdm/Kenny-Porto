@@ -63,13 +63,13 @@ const profile = {
     hardWorker: true,
     quickLearner: true,
     problemSolver: true,
-    yearsOfExperience: 'Fresh Graduate',
+    yearsOfExperience: 'Undergraduate Information Systems',
     hireable: function() {
         return (
             this.hardWorker &&
             this.problemSolver &&
             this.skills.length >= 5 &&
-            this.yearsOfExperience >= 'Fresh Graduate'
+            this.yearsOfExperience >= 'Undergraduate Information Systems'
         );
     }
 };

@@ -101,7 +101,7 @@ const ExperienceSection = () => {
       company: 'PT. Solarion Energi Alam',
       period: 'February 2025 - July 2025 (Present)',
       description:
-        'As a Data Engineer & Software Development Intern, I contributed to data processing by performing data queries and processing tasks. I also supported the design of software and application interfaces to ensure they were more intuitive and functional. Additionally, I was involved in R&D activities to enhance and improve existing systems, such as the PV Dashboard Monitoring System and AMS, to optimize their performance and efficiency.',
+        'Developed responsive and user-friendly internal web applications using HTML, CSS, and JavaScript to enhance operational efficiency within the company. In parallel, conducted end-to-end data processing by collecting, cleaning, and preparing data from multiple sources to ensure high-quality datasets for analysis. Leveraged data visualization techniques to uncover hidden patterns and provide actionable insights that supported strategic decision-making in ongoing company projects.',
     },
   ];
 

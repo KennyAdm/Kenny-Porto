@@ -27,7 +27,7 @@ const EducationSection = () => {
     },
     {
       degree: "Universitas Multimedia Nusantara",
-      school: "Undergraduate Information System",
+      school: "Undergraduate Information Systems",
       mascot: "📗",
       year: "2022 - Present",
       achievements: ["GPA : 3,73", "Active in organizational and professional training", "Engaged in data analytics projects"],

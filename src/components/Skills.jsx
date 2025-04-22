@@ -63,14 +63,16 @@ const SkillsSection = () => {
     },
     {
       icon: Code2,
-      title: 'Frontend Development',
+      title: 'Frontend Development & Languages',
       color: 'text-blue-400',
       skills: [
         { name: 'React.js', icon: <Binary className="w-4 h-4" /> },
         { name: 'HTML5', icon: <FileJson className="w-4 h-4" /> },
         { name: 'CSS3', icon: <Brush className="w-4 h-4" /> },
         { name: 'Next.js', icon: <BrainCircuit className="w-4 h-4" /> },
-        { name: 'TypeScript', icon: <FileJson className="w-4 h-4" /> }
+        { name: 'Python', icon: <Python className="w-4 h-4" /> },
+        { name: 'SQL', icon: <Database className="w-4 h-4" /> },
+        { name: 'C#', icon: <Code2 className="w-4 h-4" /> }
       ],
     },
     {
@@ -92,7 +94,9 @@ const SkillsSection = () => {
       skills: [
         { name: 'MySQL', icon: <Database className="w-4 h-4" /> },
         { name: 'Laravel', icon: <Server className="w-4 h-4" /> },
-        { name: 'Python', icon: <Python className="w-4 h-4" /> }
+        { name: 'Python', icon: <Python className="w-4 h-4" /> },
+        { name: 'Database Design', icon: <FileStack className="w-4 h-4" /> },
+        { name: 'Query Optimization', icon: <BrainCircuit className="w-4 h-4" /> }
       ],
     },
     {
