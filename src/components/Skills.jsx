@@ -94,7 +94,7 @@ const SkillsSection = () => {
       skills: [
         { name: 'MySQL', icon: <Database className="w-4 h-4" /> },
         { name: 'Laravel', icon: <Server className="w-4 h-4" /> },
-        { name: 'Python', icon: <Python className="w-4 h-4" /> },
+        { name: 'MangoDB', icon: <Database className="w-4 h-4" /> },
         { name: 'Database Design', icon: <FileStack className="w-4 h-4" /> },
         { name: 'Query Optimization', icon: <BrainCircuit className="w-4 h-4" /> }
       ],
