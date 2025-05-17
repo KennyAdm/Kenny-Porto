@@ -101,7 +101,7 @@ const ExperienceSection = () => {
       company: 'PT. Solarion Energi Alam',
       period: 'February 2025 - July 2025 (Present)',
       description:
-        'Developed responsive and user-friendly internal web applications using HTML, CSS, and JavaScript to enhance operational efficiency within the company. In parallel, conducted end-to-end data processing by collecting, cleaning, and preparing data from multiple sources to ensure high-quality datasets for analysis. Leveraged data visualization techniques to uncover hidden patterns and provide actionable insights that supported strategic decision-making in ongoing company projects.',
+        'Developed internal web applications using HTML5, CSS3, JavaScript, and the Bootstrap framework to deliver responsive, user-friendly, and functional systems that streamlined internal operations. Collected, cleaned, and prepared datasets from multiple sources to ensure high-quality data for analysis and reporting, enabling more reliable insights and strategic planning. Analyzed hidden patterns and trends in data using Jupyter Notebook (Python) to support data-driven decision-making processes within various company projects. Designed and built interactive dashboards for internal company projects using Power BI, allowing stakeholders to monitor key metrics, visualize performance, and make timely business decisions.',
     },
   ];
 
