@@ -1,18 +1,46 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import profileImage from '../assets/images/profile.png';
+import profile1 from '../assets/images/profile.png';
+import profile2 from '../assets/images/profile2.jpeg';
+import profile3 from '../assets/images/profile3.jpeg';
+import profile4 from '../assets/images/profile4.jpeg';
+import profile5 from '../assets/images/profile5.jpeg';
 import '../assets/css/portfolio.css';
+
+const PROFILE_IMAGES = [profile1, profile2, profile3, profile4, profile5];
+const SLIDE_INTERVAL_MS = 4000;
 
 const PortfolioPage = () => {
   const controls = useAnimation();
   const ref = useRef(null);
+  const slideTimerRef = useRef(null);
   const inView = useInView(ref, { once: true, threshold: 0.2 });
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const startSlideTimer = () => {
+    if (slideTimerRef.current) clearInterval(slideTimerRef.current);
+    slideTimerRef.current = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % PROFILE_IMAGES.length);
+    }, SLIDE_INTERVAL_MS);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentImageIndex(index);
+    startSlideTimer();
+  };
 
   useEffect(() => {
     if (inView) {
       controls.start('visible');
     }
   }, [controls, inView]);
+
+  useEffect(() => {
+    startSlideTimer();
+    return () => {
+      if (slideTimerRef.current) clearInterval(slideTimerRef.current);
+    };
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -120,7 +148,38 @@ Beyond academics, I actively develop my leadership, problem-solving, and adaptab
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           >
             <div className='profile-image-glow'></div>
-            <img src={profileImage} alt='Profile' className='profile-image' />
+            <div className='profile-image-stack'>
+              {PROFILE_IMAGES.map((src, index) => {
+                const isActive = index === currentImageIndex;
+                return (
+                  <motion.img
+                    key={index}
+                    src={src}
+                    alt={`Kenny profile ${index + 1}`}
+                    className='profile-image profile-image-layer'
+                    style={{ zIndex: isActive ? 2 : 1 }}
+                    animate={{
+                      opacity: isActive ? 1 : 0,
+                      scale: isActive ? 1 : 1.04,
+                    }}
+                    transition={{ duration: 0.7, ease: 'easeInOut' }}
+                    aria-hidden={!isActive}
+                  />
+                );
+              })}
+            </div>
+            <div className='profile-image-dots'>
+              {PROFILE_IMAGES.map((_, index) => (
+                <button
+                  key={index}
+                  type='button'
+                  className={`profile-image-dot ${index === currentImageIndex ? 'active' : ''}`}
+                  onClick={() => goToSlide(index)}
+                  aria-label={`Tampilkan foto ${index + 1}`}
+                  aria-current={index === currentImageIndex ? 'true' : undefined}
+                />
+              ))}
+            </div>
             <div className='profile-image-border'></div>
           </motion.div>
         </motion.div>

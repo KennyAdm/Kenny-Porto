@@ -93,7 +93,7 @@ export default function Contact() {
   };
 
   return (
-    <main className='pt-20 lg:pt-[0rem] bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90 text-white min-h-screen'>
+    <main id="contact" className='pt-20 lg:pt-[0rem] bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90 text-white min-h-screen scroll-mt-24'>
       <section className='hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8'>
         <div className='container mx-auto'>
           <div className='grid lg:grid-cols-2 gap-12 items-center'>

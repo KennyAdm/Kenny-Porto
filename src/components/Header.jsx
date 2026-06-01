@@ -1,59 +1,71 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   FaHome,
   FaLaptopCode,
-  FaUser,
   FaBriefcase,
   FaGraduationCap,
   FaCode,
   FaEnvelope,
   FaBars,
 } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+
+const navLinks = [
+  { id: "home", icon: FaHome, text: "Home" },
+  { id: "skills", icon: FaCode, text: "Skills" },
+  { id: "experience", icon: FaBriefcase, text: "Experience" },
+  { id: "education", icon: FaGraduationCap, text: "Education" },
+  { id: "projects", icon: FaLaptopCode, text: "Projects" },
+  { id: "contact", icon: FaEnvelope, text: "Contact" },
+];
 
 export default function Header() {
-  const location = useLocation();
-  const [activeLink, setActiveLink] = useState(() => {
-    const path = location.pathname.substring(1) || "home";
-    return path;
-  });
+  const [activeLink, setActiveLink] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+  const scrollToSection = useCallback((id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setActiveLink(id);
+    setIsMenuOpen(false);
   }, []);
 
-  const navLinks = [
-    { id: "home", icon: FaHome, text: "Home", path: "/" },
-    { id: "skills", icon: FaCode, text: "Skills", path: "/skills" },
-    {
-      id: "experience",
-      icon: FaBriefcase,
-      text: "Experience",
-      path: "/experience",
-    },
-    {
-      id: "education",
-      icon: FaGraduationCap,
-      text: "Education",
-      path: "/education",
-    },
-    { id: "projects", icon: FaLaptopCode, text: "Projects", path: "/projects" },
-    { id: "contact", icon: FaEnvelope, text: "Contact", path: "/contact" },
-  ];
+  useEffect(() => {
+    const observers = navLinks
+      .map(({ id }) => {
+        const el = document.getElementById(id);
+        if (!el) return null;
+
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) setActiveLink(id);
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+        observer.observe(el);
+        return observer;
+      })
+      .filter(Boolean);
+
+    return () => observers.forEach((observer) => observer.disconnect());
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-gray-900/95 backdrop-blur-md md:bg-transparent md:backdrop-blur-none">
       <div className="md:fixed md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 w-full md:w-auto">
         <div className="p-[2px] md:rounded-full bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500 animate-gradient-x">
           <nav className="bg-gray-900/90 backdrop-blur-md md:rounded-full px-4 md:px-6 py-2.5">
-            {/* Mobile Menu Button */}
             <div className="flex justify-between items-center md:hidden px-2">
-              <Link to="/" className="text-white font-bold">Portfolio</Link>
-              <button 
+              <button
+                type="button"
+                onClick={() => scrollToSection("home")}
+                className="text-white font-bold"
+              >
+                Portfolio
+              </button>
+              <button
+                type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white p-2"
               >
@@ -61,17 +73,13 @@ export default function Header() {
               </button>
             </div>
 
-            {/* Navigation Links */}
-            <div className={`${isMenuOpen ? 'block' : 'hidden'} md:block`}>
+            <div className={`${isMenuOpen ? "block" : "hidden"} md:block`}>
               <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-1 lg:gap-2 py-4 md:py-0">
-                {navLinks.map(({ id, icon: Icon, text, path }) => (
-                  <Link
+                {navLinks.map(({ id, icon: Icon, text }) => (
+                  <button
                     key={id}
-                    to={path}
-                    onClick={() => {
-                      setActiveLink(id);
-                      setIsMenuOpen(false);
-                    }}
+                    type="button"
+                    onClick={() => scrollToSection(id)}
                     className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-sm font-medium
                       transition-all duration-300 flex items-center gap-2
                       hover:bg-white/10 
@@ -88,7 +96,7 @@ export default function Header() {
                       }`}
                     />
                     <span className="inline">{text}</span>
-                  </Link>
+                  </button>
                 ))}
               </div>
             </div>

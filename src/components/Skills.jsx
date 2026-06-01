@@ -112,7 +112,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <main className='pt-15 lg:pt-0 bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90 text-white min-h-screen'>
+    <main id="skills" className='pt-15 lg:pt-0 bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90 text-white min-h-screen scroll-mt-24'>
       <section className='container mx-auto px-4 py-11'>
         <div className='flex justify-center items-center mb-12'>
           <IconCloudDemo />

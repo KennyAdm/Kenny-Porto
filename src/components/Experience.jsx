@@ -60,6 +60,23 @@ const ExperienceCard = ({ title, company, period, description, icon: Icon, image
 const ExperienceSection = () => {
   const experiences = [
     {
+      icon: Briefcase,
+      title: 'Fullstack Developer Internship',
+      company: 'PT. Indonesia Dunia Berkreatif',
+      period: 'August 2025 - May 2026',
+      description:
+        'Developed a company website for a hospitality technology company using React.js and Vite, integrating Strapi CMS as the backend content management system covering 30+ collection and single types to enable fully dynamic content management across all pages including Home, About, Service, POS, Accounting, Blog, Project, and Contact. Built a scalable data abstraction layer consisting of custom React hooks, an API service layer, and data mappers supporting Strapi v4 and v5 compatibility, empowering the team to independently update website content without developer involvement, reducing content update turnaround time and lowering long-term maintenance costs for the business.',
+    },
+    {
+      icon: Briefcase,
+      title: 'Data Engineer & Software Development Internship',
+      company: 'PT. Solarion Energi Alam',
+      period: 'February 2025 - July 2025',
+      description:
+        'Developed a responsive and user-friendly frontend for an AI-powered Learning Management System using HTML5, CSS3, JavaScript, and Bootstrap, delivering an intuitive interface that enhanced the learning experience for end users. Collected, cleaned, and transformed datasets from multiple sources using structured data preparation pipelines to ensure high-quality, analysis-ready data that supported reliable reporting and strategic business planning. Uncovered hidden patterns and actionable trends from complex datasets using Jupyter Notebook and Python, translating raw data into meaningful insights that directly informed data-driven decision-making across various company projects.',
+    },
+    
+    {
       icon: Code2,
       images: [
         '/OMB23/OMB2.png',
@@ -95,19 +112,11 @@ const ExperienceSection = () => {
       description:
         'Designed interactive and inclusive event concepts to enhance the experience of over 2,000 new participants at UMN. I coordinated with various organizational divisions to ensure all requirements were met during preparation, execution, and event days. With a team of 7 members, I effectively delegated tasks to ensure each aspect of the event ran according to schedule. During the event, I also addressed operational challenges with efficient and effective solutions.',
     },
-    {
-      icon: Briefcase,
-      title: 'Data Engineer & Software Development Internship',
-      company: 'PT. Solarion Energi Alam',
-      period: 'February 2025 - July 2025 (Present)',
-      description:
-        'Developed internal web applications using HTML5, CSS3, JavaScript, and the Bootstrap framework to deliver responsive, user-friendly, and functional systems that streamlined internal operations. Collected, cleaned, and prepared datasets from multiple sources to ensure high-quality data for analysis and reporting, enabling more reliable insights and strategic planning. Analyzed hidden patterns and trends in data using Jupyter Notebook (Python) to support data-driven decision-making processes within various company projects. Designed and built interactive dashboards for internal company projects using Power BI, allowing stakeholders to monitor key metrics, visualize performance, and make timely business decisions.',
-    },
   ];
 
   return (
     <>
-      <div className='min-h-screen bg-gradient-to-b  relative overflow-hidden pt-32 pb-20'>
+      <div id="experience" className='min-h-screen bg-gradient-to-b  relative overflow-hidden pt-32 pb-20 scroll-mt-24'>
         {/* Animated gradient background */}
         <div className='absolute inset-0 bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90' />
 

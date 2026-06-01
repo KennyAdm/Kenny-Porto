@@ -7,6 +7,7 @@ import PortfolioPage from './PortfolioPage';
 import SparklesText from './ui/sparkles-text';
 import { FlipWords } from './ui/flip-words';
 
+
 // AnimatedGrid Component
 const AnimatedGrid = () => {
   return (
@@ -81,7 +82,7 @@ const profile = {
 
   return (
     <>
-      <main className='pt-24 lg:pt-[4rem] bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90 text-white min-h-screen'>
+      <main id="home" className='pt-24 lg:pt-[4rem] bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90 text-white min-h-screen scroll-mt-24'>
         <section className='hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8'>
           <div className='absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/50'></div>
 

@@ -221,6 +221,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
     <strong>Built with ❤️ using React, Tailwind CSS, and Framer Motion</strong>
   </p>
   <p>
-    © 2024 Kenny Adam
+    © 2025 Kenny Adam
   </p>
 </div>

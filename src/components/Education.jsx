@@ -27,10 +27,10 @@ const EducationSection = () => {
     },
     {
       degree: "Universitas Multimedia Nusantara",
-      school: "Undergraduate Information Systems",
+      school: "Bachelor of Information Systems",
       mascot: "📗",
       year: "2022 - Present",
-      achievements: ["GPA : 3,73", "Active in organizational and professional training", "Engaged in data analytics projects"],
+      achievements: ["GPA : 3,8", "Active in organizational and professional training", "Engaged in data analytics projects"],
       skills: ["Big Data Analytics", "Data Visualization", "Data Science", "Data Modelling", "Business Intelligence", "Critical Thinking"],
   description:
     "Developing strong expertise in data analysis, visualization, and strategic decision-making through practical projects and continuous learning.",
@@ -61,7 +61,8 @@ const EducationSection = () => {
 
   return (
     <section
-      className="min-h-screen relative overflow-hidden py-40 bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90"
+      id="education"
+      className="min-h-screen relative overflow-hidden py-40 bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90 scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div
