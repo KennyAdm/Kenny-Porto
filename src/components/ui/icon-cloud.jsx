@@ -1,7 +1,5 @@
-"use client";
-import { useEffect, useMemo, useState } from "react";
-import { useTheme } from "next-themes";
-import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
+import { useMemo } from "react";
+import { Cloud, renderSimpleIcon } from "react-icon-cloud";
 
 export const cloudProps = {
   containerProps: {
@@ -26,20 +24,15 @@ export const cloudProps = {
     outlineColour: "#000",
     maxSpeed: 0.04,
     minSpeed: 0.02,
-    // dragControl: false,
   },
 };
 
-export const renderCustomIcon = (icon, theme, imageArray) => {
-  const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
-  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
-  const minContrastRatio = theme === "dark" ? 2 : 1.2;
-
-  return renderSimpleIcon({
+const renderIcon = (icon) =>
+  renderSimpleIcon({
     icon,
-    bgHex,
-    fallbackHex,
-    minContrastRatio,
+    bgHex: "#080510",
+    fallbackHex: "#ffffff",
+    minContrastRatio: 2,
     size: 42,
     aProps: {
       href: undefined,
@@ -48,46 +41,23 @@ export const renderCustomIcon = (icon, theme, imageArray) => {
       onClick: (e) => e.preventDefault(),
     },
   });
-};
 
-export default function IconCloud({
-  // Default to an empty array if not provided
-  iconSlugs = [],
-
-  imageArray,
-}) {
-  const [data, setData] = useState(null);
-  const { theme } = useTheme();
-
-  useEffect(() => {
-    if (iconSlugs.length > 0) {
-      // Check if iconSlugs is not empty
-      fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
-    }
-  }, [iconSlugs]);
-
-  const renderedIcons = useMemo(() => {
-    if (!data) return null;
-
-    return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "dark")
-    );
-  }, [data, theme]);
+export default function IconCloud({ icons = [], imageArray }) {
+  const renderedIcons = useMemo(
+    () => icons.filter(Boolean).map(renderIcon),
+    [icons]
+  );
 
   return (
-    // @ts-ignore
     <Cloud {...cloudProps}>
       <>
         <>{renderedIcons}</>
-        {imageArray &&
-          imageArray.length > 0 &&
-          imageArray.map((image, index) => {
-            return (
-              <a key={index} href="#" onClick={(e) => e.preventDefault()}>
-                <img height="42" width="42" alt="A globe" src={image} />
-              </a>
-            );
-          })}
+        {imageArray?.length > 0 &&
+          imageArray.map((image, index) => (
+            <a key={index} href="#" onClick={(e) => e.preventDefault()}>
+              <img height="42" width="42" alt="icon" src={image} />
+            </a>
+          ))}
       </>
     </Cloud>
   );

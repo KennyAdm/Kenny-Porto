@@ -1,6 +1,59 @@
-import React from 'react';
-import { Code2, Paintbrush, Database, Layout, Cloud, BarChart, Figma, Box, PenTool, FileStack, Activity, GitBranch, MonitorSmartphone, Laptop2, Brush, FileJson, Binary, BrainCircuit, Palette, FileSpreadsheet, Server, Phone as Python, Link as Linux, Github, Notebook as JupyterNotebook, BarChart2, Table2, Cpu, Blocks, Smartphone, BookOpen } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { supabase } from '../supabase';
+import {
+  Code2, Paintbrush, Database, Layout, Cloud, BarChart, Figma, Box,
+  PenTool, FileStack, Activity, GitBranch, MonitorSmartphone, Laptop2,
+  Brush, FileJson, Binary, BrainCircuit, Palette, FileSpreadsheet,
+  Server, Phone, Link, Github, BookOpen, BarChart2, Table2, Cpu,
+  Blocks, Smartphone, Terminal, Notebook,
+} from 'lucide-react';
 import IconCloudDemo from './globe';
+
+const iconMap = {
+  figma: Figma,
+  box: Box,
+  'monitor-smartphone': MonitorSmartphone,
+  'pen-tool': PenTool,
+  'file-stack': FileStack,
+  activity: Activity,
+  'git-branch': GitBranch,
+  'book-open': BookOpen,
+  'bar-chart-2': BarChart2,
+  'table-2': Table2,
+  'code-2': Code2,
+  'bar-chart': BarChart,
+  smartphone: Smartphone,
+  binary: Binary,
+  'file-json': FileJson,
+  brush: Brush,
+  'brain-circuit': BrainCircuit,
+  python: Terminal,
+  database: Database,
+  server: Server,
+  'file-spreadsheet': FileSpreadsheet,
+  blocks: Blocks,
+  palette: Palette,
+  cloud: Cloud,
+  github: Github,
+  linux: Link,
+  terminal: Terminal,
+  laptop: Laptop2,
+  cpu: Cpu,
+};
+
+const categoryConfig = {
+  'UI/UX and Diagram Design': { icon: Layout, color: 'text-purple-400' },
+  'Tools and Analytics': { icon: BarChart, color: 'text-pink-400' },
+  'Frontend Development & Languages': { icon: Code2, color: 'text-blue-400' },
+  'Creative Skills': { icon: Paintbrush, color: 'text-yellow-400' },
+  'Backend Development': { icon: Database, color: 'text-green-400' },
+  'Cloud & DevOps': { icon: Cloud, color: 'text-orange-400' },
+};
+
+const getIcon = (iconName) => {
+  const Icon = iconMap[iconName] ?? Code2;
+  return <Icon className="w-4 h-4" />;
+};
 
 const SkillCard = ({ icon: Icon, title, skills, color }) => (
   <div className='group relative overflow-hidden rounded-xl bg-gray-900/80 border border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20'>
@@ -30,117 +83,69 @@ const SkillCard = ({ icon: Icon, title, skills, color }) => (
 );
 
 const SkillsSection = () => {
-  const skillCategories = [
-    {
-      icon: Layout,
-      title: 'UI/UX and Diagram Design',
-      color: 'text-purple-400',
-      skills: [
-        { name: 'Figma', icon: <Figma className="w-4 h-4" /> },
-        { name: 'Draw.io', icon: <Box className="w-4 h-4" /> },
-        { name: 'Responsive Design', icon: <MonitorSmartphone className="w-4 h-4" /> },
-        { name: 'Prototyping', icon: <PenTool className="w-4 h-4" /> },
-        { name: 'Use Case', icon: <FileStack className="w-4 h-4" /> },
-        { name: 'Activity Diagram', icon: <Activity className="w-4 h-4" /> },
-        { name: 'Sequence Diagram', icon: <GitBranch className="w-4 h-4" /> },
-        { name: 'Class Diagram', icon: <Box className="w-4 h-4" /> }
-      ],
-    },
-    {
-      icon: BarChart,
-      title: 'Tools and Analytics',
-      color: 'text-pink-400',
-      skills: [
-        { name: 'Jupyter Notebook', icon: <JupyterNotebook className="w-4 h-4" /> },
-        { name: 'Power BI', icon: <BarChart2 className="w-4 h-4" /> },
-        { name: 'Tableau', icon: <Table2 className="w-4 h-4" /> },
-        { name: 'VS Code', icon: <Code2 className="w-4 h-4" /> },
-        { name: 'Cursor', icon: <PenTool className="w-4 h-4" /> },
-        { name: 'SAS Visual Analytics', icon: <BarChart className="w-4 h-4" /> },
-        { name: 'Mobile Application', icon: <Smartphone className="w-4 h-4" /> },
-        { name: 'R Studio', icon: <BookOpen className="w-4 h-4" /> }
-      ],
-    },
-    {
-      icon: Code2,
-      title: 'Frontend Development & Languages',
-      color: 'text-blue-400',
-      skills: [
-        { name: 'React.js', icon: <Binary className="w-4 h-4" /> },
-        { name: 'HTML5', icon: <FileJson className="w-4 h-4" /> },
-        { name: 'CSS3', icon: <Brush className="w-4 h-4" /> },
-        { name: 'Next.js', icon: <BrainCircuit className="w-4 h-4" /> },
-        { name: 'Python', icon: <Python className="w-4 h-4" /> },
-        { name: 'SQL', icon: <Database className="w-4 h-4" /> },
-        { name: 'C#', icon: <Code2 className="w-4 h-4" /> }
-      ],
-    },
-    {
-      icon: Paintbrush,
-      title: 'Creative Skills',
-      color: 'text-yellow-400',
-      skills: [
-        { name: 'Content Management', icon: <FileStack className="w-4 h-4" /> },
-        { name: 'Dynamic Content', icon: <Blocks className="w-4 h-4" /> },
-        { name: 'Identifying Optimal Patterns', icon: <BrainCircuit className="w-4 h-4" /> },
-        { name: 'UI Animation', icon: <Palette className="w-4 h-4" /> },
-        { name: 'Advanced Microsoft Office', icon: <FileSpreadsheet className="w-4 h-4" /> }
-      ],
-    },
-    {
-      icon: Database,
-      title: 'Backend Development',
-      color: 'text-green-400',
-      skills: [
-        { name: 'MySQL', icon: <Database className="w-4 h-4" /> },
-        { name: 'Laravel', icon: <Server className="w-4 h-4" /> },
-        { name: 'MangoDB', icon: <Database className="w-4 h-4" /> },
-        { name: 'Database Design', icon: <FileStack className="w-4 h-4" /> },
-        { name: 'Query Optimization', icon: <BrainCircuit className="w-4 h-4" /> }
-      ],
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud & DevOps',
-      color: 'text-orange-400',
-      skills: [
-        { name: 'Cloudflare', icon: <Cloud className="w-4 h-4" /> },
-        { name: 'Git', icon: <Github className="w-4 h-4" /> },
-        { name: 'Linux', icon: <Linux className="w-4 h-4" /> }
-      ],
-    },
-  ];
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      const { data, error } = await supabase
+        .from('skills')
+        .select('name, category, proficiency, icon, sort_order')
+        .order('sort_order', { ascending: true });
+
+      if (!error && data) {
+        const grouped = data.reduce((acc, skill) => {
+          if (!acc[skill.category]) acc[skill.category] = [];
+          acc[skill.category].push({ name: skill.name, icon: getIcon(skill.icon) });
+          return acc;
+        }, {});
+
+        const built = Object.entries(grouped).map(([title, skills]) => ({
+          icon: categoryConfig[title]?.icon ?? Code2,
+          title,
+          color: categoryConfig[title]?.color ?? 'text-blue-400',
+          skills,
+        }));
+
+        setCategories(built);
+      }
+      setLoading(false);
+    };
+    fetchSkills();
+  }, []);
 
   return (
     <main id="skills" className='pt-15 lg:pt-0 bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90 text-white min-h-screen scroll-mt-24'>
       <section className='container mx-auto px-4 py-11'>
-        <div className='flex justify-center items-center mb-12'>
-          <IconCloudDemo />
+        <div className='flex justify-center items-center mb-12 w-full overflow-hidden'>
+          <div className='w-full max-w-lg'>
+            <IconCloudDemo />
+          </div>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {skillCategories.map((category, index) => (
-            <SkillCard
-              key={index}
-              icon={category.icon}
-              title={category.title}
-              skills={category.skills}
-              color={category.color}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center items-center py-20">
+            <div className="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin" />
+          </div>
+        ) : (
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            {categories.map((category, index) => (
+              <SkillCard
+                key={index}
+                icon={category.icon}
+                title={category.title}
+                skills={category.skills}
+                color={category.color}
+              />
+            ))}
+          </div>
+        )}
       </section>
-      <style jsx>{`
+      <style>{`
         @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
         }
-        .animate-shimmer {
-          animation: shimmer 2s infinite;
-        }
+        .animate-shimmer { animation: shimmer 2s infinite; }
       `}</style>
     </main>
   );

@@ -64,13 +64,13 @@ const profile = {
     hardWorker: true,
     quickLearner: true,
     problemSolver: true,
-    yearsOfExperience: 'Undergraduate Information Systems',
+    yearsOfExperience: 'Bachelor of Information Systems',
     hireable: function() {
         return (
             this.hardWorker &&
             this.problemSolver &&
             this.skills.length >= 5 &&
-            this.yearsOfExperience >= 'Undergraduate Information Systems'
+            this.yearsOfExperience >= 'Bachelor of Information Systems'
         );
     }
 };
@@ -182,7 +182,7 @@ const profile = {
             </div>
 
             {/* Right column - Code window */}
-            <div className='w-full lg:w-1/2 animate__animated animate__fadeInDown animate__delay-0.1s'>
+            <div className='w-full lg:w-1/2 animate__animated animate__fadeInDown animate__delay-0.1s mt-8 lg:mt-0'>
               <div className='gradient-border'>
                 <div className='code-window bg-[#091121]'>
                   <div className='window-header'>
@@ -194,9 +194,11 @@ const profile = {
                       developer.js
                     </span>
                   </div>
-                  <pre className='language-javascript'>
-                    <code className='language-javascript'>{code}</code>
-                  </pre>
+                  <div className='overflow-x-auto'>
+                    <pre className='language-javascript !text-xs sm:!text-sm lg:!text-[0.95rem]'>
+                      <code className='language-javascript'>{code}</code>
+                    </pre>
+                  </div>
                 </div>
               </div>
             </div>

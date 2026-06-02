@@ -1,63 +1,46 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { supabase } from "../supabase";
 import EducationLoader from "./ui/EducationLoader";
-import {
-  Star,
-  Award,
-  Calendar,
-  BookOpen,
-  GraduationCap,
-  Trophy,
-} from "lucide-react";
+import { Award, Calendar, BookOpen, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
+
+const mascots = ["📘", "📗", "📙", "📕"];
+
+const formatYear = (dateStr) => {
+  if (!dateStr) return "Present";
+  return new Date(dateStr).getFullYear();
+};
 
 const EducationSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [educationData, setEducationData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const educationData = [
-    {
-      degree: "SMK Mutiara Bangsa",
-      school: "Multimedia",
-      mascot: "📘",
-      year: "2019-2022",
-      achievements: ["GPA: 95", "Graduated with Distinction", "Video Editing & Computer Science"],
-      skills: [ "Programming", "IT Fundamentals", "Graphic Design", "Video Editing", "Animation", "Photography"],
-      description:
-        "Gained hands-on experience in multimedia production, creative content development, and digital storytelling while also building a strong foundation in computer science, programming, and emerging technologies.",
-    },
-    {
-      degree: "Universitas Multimedia Nusantara",
-      school: "Bachelor of Information Systems",
-      mascot: "📗",
-      year: "2022 - Present",
-      achievements: ["GPA : 3,8", "Active in organizational and professional training", "Engaged in data analytics projects"],
-      skills: ["Big Data Analytics", "Data Visualization", "Data Science", "Data Modelling", "Business Intelligence", "Critical Thinking"],
-  description:
-    "Developing strong expertise in data analysis, visualization, and strategic decision-making through practical projects and continuous learning.",
-    },
-  ];
+  useEffect(() => {
+    const fetchEducation = async () => {
+      const { data, error } = await supabase
+        .from("education")
+        .select("institution, degree, field_of_study, gpa, start_date, end_date")
+        .order("start_date", { ascending: true });
+
+      if (!error && data) setEducationData(data);
+      setLoading(false);
+    };
+    fetchEducation();
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
   const cardVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
   };
+
+  if (loading) return <EducationLoader />;
 
   return (
     <section
@@ -101,53 +84,41 @@ const EducationSection = () => {
               <div className="space-y-6">
                 <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <span className="text-3xl">{edu.mascot}</span>
+                    <span className="text-3xl">{mascots[index] ?? "📘"}</span>
                     <h3 className="text-2xl font-bold text-white">
-                      {edu.degree}
+                      {edu.institution}
                     </h3>
                   </div>
                   <p className="text-lg text-gray-300 flex items-center gap-2">
                     <BookOpen className="w-5 h-5 text-teal-500" />
-                    {edu.school}
+                    {edu.degree}
                   </p>
                   <p className="text-gray-400 flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    {edu.year}
+                    {formatYear(edu.start_date)} – {formatYear(edu.end_date)}
                   </p>
                 </div>
 
-                <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
-                  {edu.description}
-                </p>
+                {edu.field_of_study && (
+                  <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
+                    {edu.field_of_study}
+                  </p>
+                )}
 
-                <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-white flex items-center gap-2">
-                    <Trophy className="w-4 h-4 text-yellow-500" />
-                    Key Achievements
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {edu.achievements.map((achievement, i) => (
-                      <div
-                        key={i}
-                        className="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 flex items-center gap-2 text-sm"
-                      >
+                {edu.gpa && (
+                  <div className="space-y-3">
+                    <h4 className="text-sm font-semibold text-white flex items-center gap-2">
+                      <Trophy className="w-4 h-4 text-yellow-500" />
+                      Key Achievements
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      <div className="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 flex items-center gap-2 text-sm">
                         <Award className="w-4 h-4" />
-                        <span>{achievement}</span>
+                        <span>GPA: {edu.gpa}</span>
                       </div>
-                    ))}
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {edu.skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 text-xs rounded bg-blue-500/10 text-blue-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+                )}
               </div>
             </motion.div>
           ))}

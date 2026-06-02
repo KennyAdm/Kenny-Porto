@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Phone, MapPin, Mail, Instagram, Loader2 } from 'lucide-react';
-import { FaLinkedin } from 'react-icons/fa';
+import { Send, Phone, MapPin, Mail, Instagram, Loader2, Linkedin } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -58,7 +57,7 @@ export default function Contact() {
 
     try {
       const form = new FormData();
-      form.append('access_key', '7cb5c758-0657-430a-a4fa-17b327f2de72');
+      form.append('access_key', import.meta.env.VITE_WEB3FORMS_KEY);
       form.append('name', formData.name);
       form.append('email', formData.email);
       form.append('subject', formData.subject);
@@ -86,7 +85,6 @@ export default function Contact() {
       }
     } catch (error) {
       setStatus('An error occurred. Please try again later.');
-      console.error('Error:', error);
     } finally {
       setIsLoading(false);
     }
@@ -120,7 +118,7 @@ export default function Contact() {
                 <div className='flex items-center space-x-4'>
                   <div className='bg-blue-500/10 p-3 rounded-lg'>
                     <a href="https://www.linkedin.com/in/kenny-adam/" target="_blank" rel="noopener noreferrer">
-                      <FaLinkedin className='w-6 h-6 text-blue-400' />
+                      <Linkedin className='w-6 h-6 text-blue-400' />
                     </a>
                   </div>
                   <div>

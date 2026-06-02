@@ -1,21 +1,14 @@
 import React, { useState, useEffect, useCallback } from "react";
-import {
-  FaHome,
-  FaLaptopCode,
-  FaBriefcase,
-  FaGraduationCap,
-  FaCode,
-  FaEnvelope,
-  FaBars,
-} from "react-icons/fa";
+import { Home, Code2, Briefcase, GraduationCap, Laptop, Mail, Menu, BadgeCheck } from "lucide-react";
 
 const navLinks = [
-  { id: "home", icon: FaHome, text: "Home" },
-  { id: "skills", icon: FaCode, text: "Skills" },
-  { id: "experience", icon: FaBriefcase, text: "Experience" },
-  { id: "education", icon: FaGraduationCap, text: "Education" },
-  { id: "projects", icon: FaLaptopCode, text: "Projects" },
-  { id: "contact", icon: FaEnvelope, text: "Contact" },
+  { id: "home", icon: Home, text: "Home" },
+  { id: "skills", icon: Code2, text: "Skills" },
+  { id: "education", icon: GraduationCap, text: "Education" },
+  { id: "certifications", icon: BadgeCheck, text: "Certifications" },
+  { id: "experience", icon: Briefcase, text: "Experience" },
+  { id: "projects", icon: Laptop, text: "Projects" },
+  { id: "contact", icon: Mail, text: "Contact" },
 ];
 
 export default function Header() {
@@ -67,9 +60,9 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white p-2"
+                className="text-white p-3"
               >
-                <FaBars />
+                <Menu className="w-5 h-5" />
               </button>
             </div>
 
