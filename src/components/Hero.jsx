@@ -6,6 +6,17 @@ import Meteors from './ui/meteors';
 import PortfolioPage from './PortfolioPage';
 import SparklesText from './ui/sparkles-text';
 import { FlipWords } from './ui/flip-words';
+import {
+  Rocket,
+  ArrowRight,
+  Mail,
+  BarChart3,
+  LineChart,
+  Lightbulb,
+  Code2,
+  Mouse,
+  ChevronDown,
+} from 'lucide-react';
 
 
 // AnimatedGrid Component
@@ -122,7 +133,7 @@ const profile = {
 
               {/* Role badge */}
               <div className='inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 mb-6 sm:mb-8 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-1s'>
-                <i className='fas fa-rocket text-blue-400 animate-bounce text-sm sm:text-base'></i>
+                <Rocket className='text-blue-400 animate-bounce w-4 h-4 sm:w-5 sm:h-5 shrink-0' />
                 <span>
                   <FlipWords className={'text-lg sm:text-xl text-blue-400 font-medium'} words={words} />
                 </span>
@@ -131,7 +142,8 @@ const profile = {
               {/* Description */}
               <div className='relative mb-8 sm:mb-12 max-w-xl'>
                 <p className='text-base sm:text-xl text-gray-300/90 leading-relaxed'>
-                🚀 Analyze Deeply | 📊 Visualize Clearly | 🎯 Decide Strategically | 🌟 Innovate Continuously                </p>
+                Analyze Deeply | Visualize Clearly | Decide Strategically | Innovate Continuously
+                </p>
               </div>
 
               {/* CTA Buttons */}
@@ -139,25 +151,27 @@ const profile = {
                 {/* View Projects Button */}
                 <a
                   href='https://www.linkedin.com/in/kenny-adam'
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-teal-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]'
                 >
                   <span className='block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-teal-400'>
                     <span className='relative flex items-center justify-center gap-2 text-white font-medium'>
                       <span>Learn More</span>
-                      <i className='fas fa-arrow-right transform transition-all duration-300 group-hover:translate-x-1'></i>
+                      <ArrowRight className='w-4 h-4 transform transition-all duration-300 group-hover:translate-x-1' />
                     </span>
                   </span>
                 </a>
 
                 {/* Contact Button */}
                 <a
-                  href='contact'
+                  href='#contact'
                   className='group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]'
                 >
                   <span className='block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-700'>
                     <span className='relative flex items-center justify-center gap-2 text-gray-300 font-medium group-hover:text-white'>
-                      <span>Get Resume</span>
-                      <i className='fas fa-envelope transform transition-all duration-300 group-hover:rotate-12'></i>
+                      <span>Contact Me</span>
+                      <Mail className='w-4 h-4 transform transition-all duration-300 group-hover:rotate-12' />
                     </span>
                   </span>
                 </a>
@@ -165,18 +179,21 @@ const profile = {
 
               {/* Floating badges */}
               <div className='hidden lg:block absolute left-[5.5rem] top-[2.3rem] animate-float-slow'>
-                <div className='px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400'>
-                  <i className='fas fa-wand-magic-sparkles'></i>&nbsp;&nbsp;UI Magic
+                <div className='px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400 flex items-center gap-2'>
+                  <BarChart3 className='w-4 h-4' />
+                  Analytics
                 </div>
               </div>
               <div className='hidden lg:block absolute right-10 top-20 animate-float'>
-                <div className='px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-400'>
-                  <i className='fas fa-code'></i>&nbsp;&nbsp;Clean Code
+                <div className='px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-400 flex items-center gap-2'>
+                  <LineChart className='w-4 h-4' />
+                  Visualization
                 </div>
               </div>
               <div className='hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float'>
-                <div className='px-4 py-2 rounded-lg bg-amber-500/10 backdrop-blur-sm border border-amber-500/20 text-amber-400'>
-                  <i className='fas fa-lightbulb'></i>&nbsp;&nbsp;Innovation
+                <div className='px-4 py-2 rounded-lg bg-amber-500/10 backdrop-blur-sm border border-amber-500/20 text-amber-400 flex items-center gap-2'>
+                  <Lightbulb className='w-4 h-4' />
+                  Insight
                 </div>
               </div>
             </div>
@@ -190,7 +207,7 @@ const profile = {
                     <div className='window-dot bg-yellow-500'></div>
                     <div className='window-dot bg-green-500'></div>
                     <span className='ml-2 text-sm text-gray-400 flex items-center gap-2'>
-                      <i className='fas fa-code'></i>
+                      <Code2 className='w-4 h-4' />
                       developer.js
                     </span>
                   </div>
@@ -208,10 +225,9 @@ const profile = {
         {/* Scroll indicator */}
         <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2'>
           <span className='text-gray-400 text-sm flex items-center gap-2'>
-            <i className='fas fa-mouse text-blue-400'></i>
-            
+            <Mouse className='w-4 h-4 text-blue-400' />
           </span>
-          <i className='fas fa-chevron-down text-blue-400 text-xl'></i>
+          <ChevronDown className='w-5 h-5 text-blue-400' />
         </div>
 
         <PortfolioPage />

@@ -71,17 +71,18 @@ const PortfolioPage = () => {
     },
   };
 
-  // Skills to highlight in the text
+  // Skills to highlight in the text (must match words in description)
   const highlightedSkills = [
-    'software engineer',
-    'cloud computing',
-    'DevOps',
-    'continuous learning',
-    'analytical problem-solving',
+    'Big Data Analytics',
+    'data-driven solutions',
+    'data analysis',
+    'visualization',
+    'business intelligence',
     'leadership',
-    'teamwork',
+    'problem-solving',
     'adaptability',
-    'strategic thinking',
+    'continuous learning',
+    'strategic decision-making',
   ];
 
   // Function to highlight skills in text

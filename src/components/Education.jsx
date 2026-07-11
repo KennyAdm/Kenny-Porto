@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { supabase } from "../supabase";
 import EducationLoader from "./ui/EducationLoader";

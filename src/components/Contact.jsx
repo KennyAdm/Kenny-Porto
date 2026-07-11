@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Phone, MapPin, Mail, Instagram, Loader2, Linkedin } from 'lucide-react';
+import { Send, MapPin, Mail, Instagram, Loader2, Linkedin } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({

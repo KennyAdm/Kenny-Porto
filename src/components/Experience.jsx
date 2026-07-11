@@ -70,7 +70,7 @@ const ExperienceSection = () => {
             </h2>
           </div>
           <p className='text-lg md:text-xl text-gray-400 font-medium tracking-wide text-center max-w-2xl'>
-            ------
+            Professional experience and organizational roles that shaped my growth in data and technology.
           </p>
         </div>
         {loading ? (
