@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, MapPin, Mail, Instagram, Loader2, Linkedin } from 'lucide-react';
+import { Send, MapPin, Mail, Instagram, Loader2, Linkedin, Github } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -152,6 +152,22 @@ export default function Contact() {
                     <p className='text-gray-400'>
                       <a href="https://www.instagram.com/kennyadm_/" className="hover:text-rose-400 transition-colors">
                         @kennyadm_
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className='flex items-center space-x-4'>
+                  <div className='bg-gray-500/10 p-3 rounded-lg'>
+                    <a href="https://github.com/KennyAdm" target="_blank" rel="noopener noreferrer">
+                      <Github className='w-6 h-6 text-gray-300' />
+                    </a>
+                  </div>
+                  <div>
+                    <h3 className='font-semibold'>GitHub</h3>
+                    <p className='text-gray-400'>
+                      <a href="https://github.com/KennyAdm" className="hover:text-gray-300 transition-colors">
+                        KennyAdm
                       </a>
                     </p>
                   </div>

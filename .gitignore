@@ -29,3 +29,10 @@ dist-ssr
 *.sln
 *.sw?
 README.md
+
+# AI tooling — keep local AI assistant configs/history out of the repo
+.claude/
+.cursor/
+.windsurf/
+.aider*
+CLAUDE.md
