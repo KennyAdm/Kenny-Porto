@@ -55,7 +55,7 @@ export const ProjectModal = ({
       onOpenChange={onOpenChange}
       title={title}
       srDescription={`Detail lengkap project ${title}`}
-      contentClassName='w-full max-w-3xl max-h-[90vh] overflow-y-auto'
+      contentClassName='w-full max-w-3xl max-h-[75vh] sm:max-h-[90vh] overflow-y-auto'
     >
       {images.length > 0 && (
         <div
